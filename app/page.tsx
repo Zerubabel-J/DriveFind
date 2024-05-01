@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default async function Home() {
   const allCars = await fetchCars();
+
   const isDataEmpity =
     !Array.isArray(allCars) || allCars.length < 0 || !allCars;
   console.log(allCars);
@@ -19,8 +20,8 @@ export default async function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="fuel" />
+            <CustomFilter title="fuel" value="" />
+            <CustomFilter title="fuel" value="" />
           </div>
         </div>
         {!isDataEmpity ? (
